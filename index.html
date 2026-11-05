@@ -1,3 +1,10 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0F5E4D">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>¿Dónde lo llevo?</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -185,6 +192,8 @@ ul.pl{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;font
 }
 </style>
 
+</head>
+<body>
 <div class="stage">
   <div class="phone">
     <header class="top">
@@ -420,9 +429,9 @@ ul.pl{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;font
       h += '<div class="field op"><label for="op">Operador</label><select id="op"><option value="">Todos</option>';
       Object.keys(M.ops || {}).forEach(function(o){ h += '<option value="' + esc(o) + '"' + (o === S.op ? ' selected' : '') + '>' + esc(o) + ' (' + M.ops[o] + ')</option>'; });
       h += '</select></div></div><div class="toggles">';
-      h += '<button class="tg" data-tg="perm" aria-pressed="' + S.perm + '">Solo permanentes</button>';
+      h += '<button class="tg" data-tg="perm" aria-pressed="' + S.perm + '">Abiertos todo el año</button>';
       h += '<button class="tg" data-tg="broken" aria-pressed="' + S.broken + '">Mi aparato está quebrado</button>';
-      h += '<button class="tg" data-tg="all" aria-pressed="' + S.all + '">Incluir los que no lo declaran</button>';
+      h += '<button class="tg" data-tg="all" aria-pressed="' + S.all + '">Mostrar también puntos sin confirmar</button>';
       h += '</div></div>';
       h += '<div class="count">' + fmt(list.length) + (list.length === 1 ? ' punto' : ' puntos') + (q.ref ? ' · ordenados por cercanía al centro de ' + esc(S.canton) : '') + '</div>';
       if(!S.prov) h += '<p class="note" style="border-top:0;padding-top:0;margin-top:-6px">Elige provincia y cantón para ordenarlos del más cercano al más lejano.</p>';
@@ -528,3 +537,5 @@ ul.pl{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;font
   route();
 })();
 </script>
+</body>
+</html>
